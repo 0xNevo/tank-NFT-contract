@@ -55,6 +55,7 @@ contract TankMint is ERC721URIStorage {
         require( gameStarted == true, "The game is not started yet!" );
 
         ( bool sent, ) = _winner.call{ value: _rewardAmount }( "" );
+        
         require( sent, "Failed to send Ether" );
 
         profitPerWallet[ _winner ] += int256( _rewardAmount );

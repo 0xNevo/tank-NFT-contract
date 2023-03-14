@@ -34,7 +34,6 @@ contract TankMint is ERC721URIStorage {
         _setTokenURI( tokenId, _tokenUri );
 
         emit TankNFTMinted( msg.sender, tokenId );
-
         return tokenId;
     }
 
@@ -46,7 +45,6 @@ contract TankMint is ERC721URIStorage {
         gameStarted = true;
 
         emit BettingStarted( msg.sender, _amount );
-
         return true;
     }
 
@@ -62,7 +60,6 @@ contract TankMint is ERC721URIStorage {
         gameStarted = false;
         
         emit BettingEnded( _winner, _rewardAmount );
-
         return true;
     }
 }
